@@ -56,7 +56,7 @@ resource "aws_cloudwatch_event_target" "default" {
     }
   }
   lifecycle {
-    ignore_changes = [ecs_target.propagate_tags]
+    ignore_changes = [ecs_target[0].propagate_tags]
   }
 }
 
