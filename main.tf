@@ -55,6 +55,10 @@ resource "aws_cloudwatch_event_target" "default" {
       subnets = var.subnets
     }
   }
+  
+  lifecycle {
+    ignore_changes = [propagate_tags]
+  }
 }
 
 # CloudWatch Events IAM Role
